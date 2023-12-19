@@ -1,7 +1,13 @@
 ---
 
-- name: allow port
-  shell: |
-         firewall-cmd --zone=public --permanent --add-port 8081/tcp
-         firewall-cmd --zone=public --permanent --add-port 8070/tcp
-         firewall-cmd --reload
+- name:  Allow firewalld ports
+  ansible.posix.firewalld:
+    port: "{{ item }}" 
+    permanent: true
+    state: enabled
+  with_items: "{{ firewall_list }}"      
+
+- name: Reload firewalld
+  ansible.builtin.service:
+    name: firewalld
+    state: reloaded
