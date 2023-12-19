@@ -1,6 +1,6 @@
 ---
 
-- name: add nexus user
+- name: add app user
   user:
-    name: {{ nexus }}
+    name: "{{ app_user }}"
     expires: -1
