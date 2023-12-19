@@ -2,5 +2,5 @@
 
 - name: add nexus user
   user:
-    name: nexus
+    name: {{ nexus }}
     expires: -1

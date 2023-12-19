@@ -4,18 +4,5 @@
   yum: 
     name: "{{ item }}" 
     state: present
-  with_items: "{{ packages_list }}"         
-  
-- name: download nexus
-  shell: |
-         wget https://download.sonatype.com/nexus/3/nexus-"{{ nexus_ver }}"-unix.tar.gz
-  args:
-    chdir: /opt       
-
-- name: install binaries maven 
-  yum: 
-    name: "{{ item }}" 
-    state: present
-  with_items: "{{ plugin_list }}"         
-  when: "'plugin' in {{group_names}}"
-
+  with_items: "{{ package_list }}"         
+         

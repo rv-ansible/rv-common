@@ -1,0 +1,8 @@
+---    
+  
+- name: setup nexus bashrc
+  ansible.builtin.lineinfile: 
+    dest: /home/nexus/.bashrc
+    line: "{{ item }}"
+  with_items: "{{ bashrc_env }}"
+  become_user: nexus     
