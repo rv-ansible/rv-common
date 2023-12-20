@@ -1,6 +1,6 @@
 ---
 
-- name:  Allow firewalld ports
+- name: Allow firewalld ports
   ansible.posix.firewalld:
     port: "{{ item }}" 
     permanent: true

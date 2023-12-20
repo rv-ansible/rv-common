@@ -2,5 +2,5 @@
 
 - name: add app user
   user:
-    name: "{{ app_user }}"
+    name: "{{ app.os_user }}"
     expires: -1
