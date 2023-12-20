@@ -1,0 +1,7 @@
+---
+
+- name: Remove content of a file
+  ansible.builtin.lineinfile:
+    path: "{{ folder_path }}"
+    state: absent 
+    regexp: "{{ search_string }}"  

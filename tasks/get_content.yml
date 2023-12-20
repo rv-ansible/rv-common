@@ -1,0 +1,6 @@
+---
+
+- name: Get content of a file
+  ansible.builtin.slurp:
+    src: "{{ folder_path }}"
+  register: mounts

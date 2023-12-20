@@ -3,6 +3,6 @@
 - name: download package
   ansible.builtin.get_url:
     url: "{{url_package}}"
-    dest: /opt
+    dest: "{{tmp_folder}}"
     mode: '0755'    
     

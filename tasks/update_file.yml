@@ -1,0 +1,7 @@
+---
+
+- name: Update a file
+  ansible.builtin.lineinfile:
+    path: "{{ folder_path }}"  
+    regexp: "{{ search_string }}"  
+    line: "{{ new_string }}"  

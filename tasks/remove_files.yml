@@ -1,0 +1,9 @@
+---
+
+- name: Remove files
+  ansible.builtin.file:
+    state: absent
+    path: "{{ item }}"
+  with_items: "{{ file_list }}"  
+
+  

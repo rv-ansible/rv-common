@@ -1,0 +1,7 @@
+---
+
+- name: Check folder, fail if exist
+  stat:
+    path: "{{app.folder}}"
+  register: file_info
+  failed_when: file_info.stat.exists

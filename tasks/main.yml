@@ -29,7 +29,16 @@
 
 - include_tasks: security_limits.yml
   when: security_limits|default(False)==True    
+  
+- include_tasks: unarchive.yml
+  when: unarchive|default(False)==True    
 
+- include_tasks: fail_if_exist.yml
+  when: fail_if_exist|default(False)==True    
+
+- include_tasks: cleanup.yml
+  when: cleanup|default(False)==True    
+  
 - include_tasks: get_raw_disk.yml
   when: get_raw_disk|default(False)==True  
 

@@ -1,0 +1,13 @@
+---
+
+- name: Create folder if not exist
+  ansible.builtin.file:
+    path: "{{app.folder}}"
+    state: directory
+
+- name: unarchive tar
+  ansible.builtin.unarchive:
+    src: "{{tmp_folder}}/nexus-{{app.version}}-unix.tar.gz"
+    dest: "{{app.folder}}"
+    remote_src: yes
+    
