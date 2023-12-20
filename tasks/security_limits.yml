@@ -1,8 +1,8 @@
 ---
 
 - name: Add security limits
-  lineinfile: 
-      dest: /etc/security/limits.conf 
-      line: "{{ item }}" 
+  ansible.builtin.lineinfile: 
+    dest: /etc/security/limits.conf 
+    line: "{{ item }}" 
   with_items: "{{ security_limits_list }}"      
     
