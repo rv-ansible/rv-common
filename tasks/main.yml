@@ -9,6 +9,9 @@
 - include_tasks: adduser.yml
   when: adduser|default(False)==True
 
+- include_tasks: addgroup.yml
+  when: addgroup|default(False)==True
+
 - include_tasks: allowport.yml
   when: allowport|default(False)==True
 

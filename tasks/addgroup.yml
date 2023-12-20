@@ -1,0 +1,6 @@
+---
+
+- name: add linux group
+  ansible.builtin.group:
+    name: "{{ app.os_group }}"
+    state: present
