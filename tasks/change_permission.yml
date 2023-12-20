@@ -1,0 +1,9 @@
+---
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: "{{ item }}" 
+    owner: "{{app.os_user}}"
+    group: "{{app.os_user}}"
+    mode: "{{ file_mode }}" 
+  with_items: "{{ file_list }}"        

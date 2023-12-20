@@ -7,7 +7,7 @@
 
 - name: unarchive tar
   ansible.builtin.unarchive:
-    src: "{{tmp_folder}}/nexus-{{app.version}}-unix.tar.gz"
+    src: "{{archive_file}}"
     dest: "{{app.folder}}"
     remote_src: yes
     
