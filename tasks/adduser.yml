@@ -2,5 +2,5 @@
 
 - name: add linux user
   ansible.builtin.user:
-    name: "{{ app.os_user }}"
+    name: "{{ os_user }}"
     expires: -1

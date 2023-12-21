@@ -3,8 +3,8 @@
 - name: Change file ownership, group and permissions
   ansible.builtin.file:
     path: "{{ item }}" 
-    owner: "{{app.os_user}}"
-    group: "{{app.os_user}}"
+    owner: "{{os_user}}"
+    group: "{{os_user}}"
     mode: "{{ file_mode }}" 
     recurse: "{{ recursive }}" 
   with_items: "{{ file_list }}"        

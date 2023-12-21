@@ -2,12 +2,12 @@
 
 - name: Create folder if not exist
   ansible.builtin.file:
-    path: "{{app.folder}}"
+    path: "{{folder}}"
     state: directory
 
 - name: unarchive tar
   ansible.builtin.unarchive:
     src: "{{archive_file}}"
-    dest: "{{app.folder}}"
+    dest: "{{folder}}"
     remote_src: yes
     
