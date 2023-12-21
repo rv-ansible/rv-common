@@ -6,5 +6,5 @@
     owner: "{{app.os_user}}"
     group: "{{app.os_user}}"
     mode: "{{ file_mode }}" 
-    recurse: yes
+    recurse: "{{ recursive }}" 
   with_items: "{{ file_list }}"        
